@@ -2,8 +2,6 @@ const express = require("express");
 const routes = express.Router();
 const { newLocalTask, localTasks, updateLocalTaskById,} = require("../controllers/local.tasks.controller");
 const { tasks, taskById, newTask, updateTaskById, deleteTask } = require("../controllers/tasks.controller");
-// const { validation } = require("../middlewares/validations");
-const { schema, validation } = require("../middlewares/tasks.validations");
 
 
 routes.get("/local-tasks", localTasks);
@@ -18,7 +16,7 @@ routes.get("/tasks", tasks);
 
 routes.get("/tasks/:id", taskById);
 
-routes.post("/new-task", newTask, validation(schema));
+routes.post("/new-task", newTask, );
 
 routes.put("/update-task/:id", updateTaskById);
 
